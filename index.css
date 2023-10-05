@@ -15,10 +15,10 @@ html, body {
 }
 
 body {
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     background-size: cover;
     background-repeat: repeat-y;
-    background-image: url('images/moviepitchbg-dark.jpg');
+    background-image: url('images/moviepitchbg-dark2two.png');
     height: 100vh;
     display: flex;
     flex-direction: column;

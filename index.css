@@ -82,6 +82,7 @@ section {
     max-width: 420px;
 }
 
+
 /* =================
       Setup
      ================= */
@@ -261,5 +262,6 @@ footer {
     color: var(--light);
     padding: .8em;
     font-size: .7em;
-    text-align: center
+    text-align: center;
 }
+

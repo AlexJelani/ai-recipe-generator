@@ -1,5 +1,41 @@
 import { process } from '/env';
 import { Configuration, OpenAIApi } from 'openai';
+// Check if the browser is Chrome (Chrome has a window.chrome object)
+const isChrome = 'chrome' in window;
+
+// Check if the browser is Microsoft Edge
+const isEdge = navigator.userAgent.includes("Edg");
+
+// Select the footer element
+const footer = document.querySelector("footer");
+
+// If the browser is Chrome, add the specific CSS properties
+if (isChrome) {
+  footer.style.position = "fixed";
+  footer.style.bottom = "0";
+  footer.style.width = "100%";
+  // Add any additional styles specific to Chrome here
+} else {
+  // For other browsers, keep the existing CSS styles
+  footer.style.backgroundColor = "var(--dark)";
+  footer.style.color = "var(--light)";
+  footer.style.padding = ".8em";
+  footer.style.fontSize = ".7em";
+  footer.style.textAlign = "center";
+}
+
+// If the browser is IE, add specific styles for section
+if (isEdge) {
+  const section = document.querySelector("section");
+  section.style.margin = "170px auto";
+  section.style.backgroundColor = "var(--light)";
+  section.style.borderRadius = "var(--border-rad-lg)";
+  section.style.padding = ".25em 1em";
+  section.style.boxShadow = "0px 1px 18px 3px var(--dark)";
+  section.style.maxWidth = "420px";
+}
+
+
 
 const setupInputContainer = document.getElementById('setup-input-container');
 const recipeText = document.getElementById('recipe-text');

@@ -56,7 +56,7 @@ document.getElementById("send-btn").addEventListener("click", () => {
     // Log the start of the function
     console.log("Send button clicked. User input:", userInput);
 
-    setupInputContainer.innerHTML = `<img src="public/images/loading.svg" class="loading" id="loading" alt="">`;
+    setupInputContainer.innerHTML = `<img src="images/loading.svg" class="loading" id="loading" alt="">`;
     recipeText.innerText = `Ok, just wait a second while my digital brain digests that...`;
 
     // Log the start of fetchBotReply and fetchRecipeTitle

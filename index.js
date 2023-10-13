@@ -1,4 +1,3 @@
-import { process } from '/env';
 import { Configuration, OpenAIApi } from 'openai';
 // Check if the browser is Chrome (Chrome has a window.chrome object)
 const isChrome = 'chrome' in window;
@@ -40,22 +39,34 @@ if (isEdge) {
 const setupInputContainer = document.getElementById('setup-input-container');
 const recipeText = document.getElementById('recipe-text');
 
+// const configuration = new Configuration({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
 });
-
 const openai = new OpenAIApi(configuration);
+
 
 document.getElementById("send-btn").addEventListener("click", () => {
   const setupTextarea = document.getElementById('setup-textarea');
   if (setupTextarea.value) {
     const userInput = setupTextarea.value;
-    setupInputContainer.innerHTML = `<img src="images/loading.svg" class="loading" id="loading" alt="">`;
+
+    // Log the start of the function
+    console.log("Send button clicked. User input:", userInput);
+
+    setupInputContainer.innerHTML = `<img src="public/images/loading.svg" class="loading" id="loading" alt="">`;
     recipeText.innerText = `Ok, just wait a second while my digital brain digests that...`;
+
+    // Log the start of fetchBotReply and fetchRecipeTitle
+    console.log("Fetching bot reply and recipe title...");
+
     fetchBotReply(userInput);
     fetchRecipeTitle(userInput);
   }
 });
+
 
 async function fetchBotReply(outline) {
   const response = await openai.createCompletion({
@@ -119,11 +130,12 @@ async function fetchIngredients(title) {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `Based on the ${title} display list of ingredients and the measurements for the recipe. It
-    should have 5 ingredients or less. `,
+    should have 5 to 7 ingredients or less. `,
     max_tokens: 80,
   });
 
   const ingredients = response.data.choices[0].text.trim();
+  console.log(response);
   document.getElementById('recipe-ingredients').innerText = ingredients;
   fetchRecipe(ingredients); // Call fetchRecipe here to display instructions
 }

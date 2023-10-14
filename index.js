@@ -1,4 +1,8 @@
 import { Configuration, OpenAIApi } from 'openai';
+// import loading from "./src/assets/loading.svg?url"
+const loading = new URL('./assets/loading.svg?url', import.meta.url).href;
+// If you intend to use the URL of that asset, use /assets/loading.svg?url.
+
 // Check if the browser is Chrome (Chrome has a window.chrome object)
 const isChrome = 'chrome' in window;
 
@@ -56,7 +60,7 @@ document.getElementById("send-btn").addEventListener("click", () => {
     // Log the start of the function
     console.log("Send button clicked. User input:", userInput);
 
-    setupInputContainer.innerHTML = `<img src="images/loading.svg" class="loading" id="loading" alt="">`;
+    setupInputContainer.innerHTML = `<img src="${loading}" class="loading" id="loading" alt="">`;
     recipeText.innerText = `Ok, just wait a second while my digital brain digests that...`;
 
     // Log the start of fetchBotReply and fetchRecipeTitle

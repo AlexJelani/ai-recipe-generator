@@ -18,7 +18,7 @@ body {
     font-family: 'Poppins', serif;
     background-size: cover;
     background-repeat: repeat-y;
-    background-image: url('images/spaghetti-1932466_1920.jpg');
+    background-image: url('src/assets/spaghetti-1932466_1920.jpg');
     height: 100vh;
     display: flex;
     flex-direction: column;

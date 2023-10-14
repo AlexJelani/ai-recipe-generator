@@ -43,11 +43,9 @@ if (isEdge) {
 const setupInputContainer = document.getElementById('setup-input-container');
 const recipeText = document.getElementById('recipe-text');
 
-// const configuration = new Configuration({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
+
 const configuration = new Configuration({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+  apiKey: import.meta.env.VITE_OPEN_KEY,
 });
 const openai = new OpenAIApi(configuration);
 

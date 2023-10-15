@@ -1,5 +1,4 @@
-# co69942d6b22db314a32431fd
-
+# AI Recipe Generator
 Quick start:
 
 ```

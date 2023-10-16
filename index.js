@@ -46,11 +46,30 @@ const recipeText = document.getElementById('recipe-text');
 
 // Get the API key from Firebase Functions configuration
 // Retrieve the API key from Firebase Functions configuration
-const configuration = new Configuration({
-  apiKey: import.meta.env.VITE_OPEN_KEY,
+// const configuration = new Configuration({
+//   apiKey: import.meta.env.VITE_OPEN_KEY,
+//
+// });
+// const openai = new OpenAIApi(configuration);
+// Initialize the API key first
+let openai;
 
-});
-const openai = new OpenAIApi(configuration);
+fetch('https://us-central1-ai-recipegenerator.cloudfunctions.net/api/getApiKey')
+    .then((response) => response.json())
+    .then((data) => {
+      // Use the fetched API key to create the openai object
+      const apiKey = data.apiKey;
+      const configuration = new Configuration({
+        apiKey: apiKey,
+      });
+      openai = new OpenAIApi(configuration);
+
+      // Continue with any code that uses openai
+      // ...
+    })
+    .catch((error) => {
+      console.error('Error fetching API key:', error);
+    });
 
 
 document.getElementById("send-btn").addEventListener("click", () => {

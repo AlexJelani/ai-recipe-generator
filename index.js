@@ -44,8 +44,7 @@ if (isEdge) {
 const setupInputContainer = document.getElementById('setup-input-container');
 const recipeText = document.getElementById('recipe-text');
 
-// Get the API key from Firebase Functions configuration
-// Retrieve the API key from Firebase Functions configuration
+// Retrieve the API key from Vite env
 // const configuration = new Configuration({
 //   apiKey: import.meta.env.VITE_OPEN_KEY,
 //

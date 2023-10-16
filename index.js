@@ -1,5 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai';
 import svgImage from './src/assets/loading.svg'
+
 // import loading from "./src/assets/loading.svg?url"
 // If you intend to use the URL of that asset, use /assets/loading.svg?url.
 
@@ -43,9 +44,11 @@ if (isEdge) {
 const setupInputContainer = document.getElementById('setup-input-container');
 const recipeText = document.getElementById('recipe-text');
 
-
+// Get the API key from Firebase Functions configuration
+// Retrieve the API key from Firebase Functions configuration
 const configuration = new Configuration({
   apiKey: import.meta.env.VITE_OPEN_KEY,
+
 });
 const openai = new OpenAIApi(configuration);
 

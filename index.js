@@ -53,7 +53,8 @@ const recipeText = document.getElementById('recipe-text');
 // Initialize the API key first
 let openai;
 
-fetch('https://us-central1-ai-recipegenerator.cloudfunctions.net/api/getApiKey')
+const apiUrl = import.meta.env.VITE_API_URL;
+fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
       // Use the fetched API key to create the openai object

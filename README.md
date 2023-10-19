@@ -2,7 +2,7 @@
 
 ![](images/recipeai.png)
 
-#### Tech Stack
+## Tech Stack
 Client: OPENAI, Vite, Js, HTML, CSS
 $ npm install
 $ npm start

@@ -1,5 +1,6 @@
 # AI Recipe Generator
-Quick start:
+
+![](images/recipeai.png)
 
 ```
 $ npm install

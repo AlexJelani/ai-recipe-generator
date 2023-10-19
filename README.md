@@ -11,6 +11,7 @@ Client:OPENAI, Vite, JavaScript, HTML, CSS, Firebase
 *  openai.createCompletion
 *  openai.createImage
 *  text-davinci-003
+  
 ## Features
 * **Creative Recipe Responses**: # Recipe Generator takes an ingredient as input and generates a delicious recipe for the user with an image to it. The responses generate a an image of the recipe, the description of the recipe, the full list of ingredients, and the steps on how to make the recipe.
 

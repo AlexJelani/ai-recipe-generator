@@ -1,3 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 :root {
     --white: #ffffff;
     --light: whitesmoke;
@@ -18,12 +23,16 @@ body {
     font-family: 'Poppins', serif;
     background-size: cover;
     background-repeat: repeat-y;
-    background-image: url('src/assets/spaghetti-1932466_1920.jpg');
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url('src/assets/spaghetti-1932466_1920.jpg');
 }
+
+
+
+
 
 /* =================
       Typography
@@ -190,11 +199,10 @@ textarea::placeholder {
         opacity: 0.8;
     }
 }
-@media(min-width: 576px) {
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+/* Add outside padding to the main when the viewport is 580px or smaller */
+@media (max-width: 580px) {
+    main {
+        padding-bottom: 15em;
     }
 }
 /* =================

@@ -1,4 +1,4 @@
-# AI Recipe Generator
+# AI Recipe Generator - Vite, OpenAI & Firebase
 
 ![](images/recipeai.png)
 
